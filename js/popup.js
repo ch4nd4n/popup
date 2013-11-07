@@ -12,13 +12,20 @@
       var self = $(this), settings = null;
       // wire up one time stuff in init.
       var init = function(){
-        //look for 'ui-close' class and attach hide event on click
-        self.find(".ui-close").click(function(){self.popup('hide');});
+        self.find(".ui-close").click(function(){hide();});
         if(settings.backdropClose){
           self.click(function(e){
-            self.popup('hide');
+            hide();
           });
         }
+      }
+      var showPopup = function(){
+        $('body').addClass('modal-open');
+        self.show();
+      }
+      var hide = function(){
+        $('body').removeClass('modal-open');
+        self.hide();
       }
       var default_options = {init : true, backdropClose : true};
       if(!this.settings) {
@@ -35,12 +42,10 @@
       if(settings){
         switch(settings.action){
           case 'hide':
-            self.hide();
-            $('body').removeClass('modal-open');
+            hide();
             break;
           default:
-            $('body').addClass('modal-open');
-            self.show();
+            showPopup();
         }
       }
       return self;
