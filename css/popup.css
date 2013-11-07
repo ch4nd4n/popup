@@ -1,0 +1,8 @@
+.modal-open{overflow:hidden;}
+.modal{position: fixed;top: 0;bottom: 0;right: 0;left: 0;z-index: 10;overflow-y:scroll;display: block;background: rgba(0,0,0,0.8);}
+.modal-dialog{padding: 20px 0;position: relative;margin: auto;width: 600px;}
+.modal-content{background: #fff;border-radius: 15px;}
+.modal-header{border-bottom: 1px solid #333;padding: 15px;}
+.modal-body{padding: 15px;}
+.modal-footer{padding: 15px;border-top: 1px solid #333;}
+.hide{display: none;}
